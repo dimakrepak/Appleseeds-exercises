@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            border: solid 1px #000000;
+            padding: 3rem;
+            margin: 10px;
+            background: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="myFirstDiv"></div>
+    <div id="mySecondDiv"></div>
+    <div id="myThridDiv"></div>
+    <div id="myFourthDiv"></div>
+
+    <script>
+        const myFirstDiv = document.querySelector("#myFirstDiv");
+        const mySecondDiv = document.querySelector("#mySecondDiv");
+        const myThirdDiv = document.querySelector("#myThirdDiv");
+        const myFourthDiv = document.querySelector("#myFourthDiv");
+        let colors = ['red', 'green', 'black', 'yellow', 'blue', 'yellow']
+        const divs = document.querySelectorAll('div')
+        // let c = window.getComputedStyle(myFirstDiv).backgroundColor
+        divs.forEach((e, index) => {
+            e.addEventListener('click', () => {
+                const curColor = e.style.backgroundColor
+                if (curColor === 'blue'){
+                    console.log(curColor)
+                e.style.backgroundColor = colors[index]
+                }else{
+                    e.style.backgroundColor = 'blue'
+                }
+            })
+        })
+
+
+    </script>
+</body>
+
+</html>
